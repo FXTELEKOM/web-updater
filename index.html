@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FXtelekom Config frissítő</title>
+    <link rel="prefetch" href="js/index.min.js" />
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader {
+            border-top-color: #3498db;
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-3xl">
+        <h1 class="text-2xl font-bold mb-4 text-center text-gray-800">FXtelekom konfiguráció frissítő</h1>
+        <p class="text-gray-600 mb-6 text-center">Illeszd be a WireGuard konfigurációs fájl tartalmát, majd kattints a "Frissítés" gombra. A frissített konfigurációt a "Másolás" gombbal kimásolhatod amint kész. </p>
+        
+        <textarea 
+            id="configInput" 
+            placeholder="Illeszd be ide a wireguard konfigurációd" 
+            class="w-full h-48 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        ></textarea>
+        
+        <div class="flex items-center space-x-4">
+            <button id="replaceButton" class="flex-grow bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition duration-300 flex items-center justify-center">
+                <svg id="buttonIcon" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                <p>Frissítés</p>
+            </button>
+            
+            <button 
+                id="copyButton" 
+                class="bg-green-500 text-white py-3 px-4 rounded-md hover:bg-green-600 transition duration-300 flex items-center justify-center"
+                title="Copy to Clipboard"
+            >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                </svg>
+                <p>Másolás</p>
+            </button>
+        </div>
+
+        <div id="outputContainer" class="mt-6">
+            <h2 class="text-xl font-semibold mb-2 text-gray-800">Frissített konfiguráció</h2>
+            <pre id="output" class="bg-gray-50 p-4 rounded-md border max-h-64 overflow-y-auto" style="white-space: pre-wrap;"></pre>
+        </div>
+        
+    </div>
+    <script src="js/index.min.js"></script>
+</body>
+</html>
+
