@@ -47,7 +47,8 @@ replaceButton.addEventListener("click", async () => {
         "https://fxtelekom.org/ips/websupportsk.txt",
         "https://fxtelekom.org/ips/gcore.txt",
         "https://fxtelekom.org/ips/fastly.txt",
-        "https://fxtelekom.org/ips/cloudflare.txt"
+        "https://fxtelekom.org/ips/cloudflare.txt",
+        "https://fxtelekom.org/ips/github-ucontent.txt"
     ];
     const dnsIPsUrl = "https://fxtelekom.org/ips/dns.txt";
 
