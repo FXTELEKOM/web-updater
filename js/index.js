@@ -41,7 +41,6 @@ replaceButton.addEventListener("click", async () => {
 
     const allowedIPsUrls = [
         "https://fxtelekom.org/ips/intern.txt",
-        "https://fxtelekom.org/ips/dns.txt",
         "https://fxtelekom.org/ips/hunt.txt",
         "https://fxtelekom.org/ips/valve-cs2.txt",
         "https://fxtelekom.org/ips/websupportsk.txt",
